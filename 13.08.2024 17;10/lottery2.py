@@ -3,8 +3,20 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QHBoxLay
 
 def show_win():
     victory_win=QMessageBox()
-    victory_win.setText('Ви виграли зустріч з творцями каналу')
+    victory_win.setText('Ура! Ти виграв приватний літак !!!')
     victory_win.exec_()
+
+
+def lol():
+    lol_win=QMessageBox()
+    lol_win.setText('Ти серйозно -_- ?')
+    lol_win.exec_()
+
+
+def lol2():
+    lol2_win=QMessageBox()
+    lol2_win.setText('💀')
+    lol2_win.exec_()
 
 
 def show_lose():
@@ -15,17 +27,17 @@ def show_lose():
 app = QApplication([])
 
 my_win = QWidget()
-my_win.setWindowTitle('Конкурс від Crazy People')
+my_win.setWindowTitle('CRAZY ПИТАННЯ')
 my_win.move(100, 100)
-my_win.resize(400, 200)
+my_win.resize(400, 400)
 
-qestion = QLabel('Як звали першого ютуб-блогера, який набрав 10.000.000 підписників?')
-btn_ans1=QRadioButton('PewDiePie')
-btn_ans2=QRadioButton('Рет і Лінк')
-btn_ans3=QRadioButton('SlivkiShow')
-btn_ans4=QRadioButton('TheBrianMaps')
-btn_ans5=QRadioButton('Mister Max')
-btn_ans6=QRadioButton('EeOneGuy')
+qestion = QLabel('Що таке PyQt5 ?')
+btn_ans1=QRadioButton('Це профісійний інструмент, яким користуються багато програмістів')
+btn_ans2=QRadioButton('Це Функція за допомогою якої можно додати значок')
+btn_ans3=QRadioButton('Це те що заміняє нам print')
+btn_ans4=QRadioButton('Я не знаю')
+btn_ans5=QRadioButton('Це місто де можна зберігати усі модулі')
+btn_ans6=QRadioButton('Усі відповіді вірні')
 
 layout = QVBoxLayout()
 layoutH1 = QHBoxLayout()
@@ -48,12 +60,35 @@ layout.addLayout(layoutH3)
 layout.addLayout(layoutH4)
 my_win.setLayout(layout)
 
-btn_ans3.clicked.connect(show_lose)
+btn_ans3.clicked.connect(lol2)
 btn_ans1.clicked.connect(show_win)
 btn_ans2.clicked.connect(show_lose)
-btn_ans4.clicked.connect(show_lose)
+btn_ans4.clicked.connect(lol)
 btn_ans5.clicked.connect(show_lose)
 btn_ans6.clicked.connect(show_lose)
+
+
+my_win.setStyleSheet("""
+    QLabel {
+        font-family: Arial, sans-serif;
+        font-size: 20px;     
+    }
+    QWidget {
+        background-color:#ADD8E6;
+                            
+    }
+    QRadioButton{
+        font-size: 14px;
+        background-color: #00FFFF;
+        color: black;
+        padding: 10px;
+        border-radius: 10px;                
+                    
+    }
+    QRadioButton:hover {
+        background-color: #00FFFF;        
+    }
+""")
 
 my_win.show()
 app.exec_()
