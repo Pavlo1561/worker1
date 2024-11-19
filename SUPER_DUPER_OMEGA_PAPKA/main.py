@@ -41,6 +41,14 @@ class Widget(QMainWindow):
 
     def del_note():
         if list_notes.selectedItems():
+            key = list_notes.selectedItems()[0].text()
+            del notes[key]
+            list_notes.clear()
+            list_tags.clear()
+            field_text.clear()
+            list_notes.addItems(notes)
+            with open('notes_data.json', 'w') as file:
+                json.dump(notes, file, sort_keys=True, en)
 
     def show_note(self):
         key = self.ui.list_notes.selectedItems()[0].text()
@@ -56,6 +64,17 @@ class Widget(QMainWindow):
         except:
             with open('notes_data.json', 'w') as file:
                 json.dump(self.notes,file)
+
+
+btn_note_crate.clicked.connect(add_note)
+btn_note_del.clicked.connect(del_note)
+btn_tag_add.clicked.connect(add_tag)
+btn_tag_del.clicked.connect(del_tag)
+btn_tag_search.clicked.connect(search_tag)
+btn_note_save.clicked.connect(save_note)
+list_notes.ItemClicked.connect(show_note)
+
+
 if __name__ == "__main__":
     app = QWidget.QApplication([])
     window = Widget()
@@ -64,16 +83,3 @@ if __name__ == "__main__":
     app.exec_()
 
 
-#btn_note_crate
-#btn_note_del
-#btn_tag_add
-#btn_tag_del
-#btn_tag_search
-#field_tag_2
-#list_notes
-#list_notes_label
-#list_tags
-#list_text_label
-#note
-#menubar
-#statusbar

@@ -101,7 +101,6 @@ class Ui_MainWindow(object):
         self.btn_tag_add.setText(_translate("MainWindow", "Додати до замітки"))
         self.btn_tag_del.setText(_translate("MainWindow", "Відлкрипити від замітки"))
         self.btn_tag_search.setText(_translate("MainWindow", "Шукати замітку по тегу"))
-        #self.field_tag_2.setText(_translate("MainWindow", " "))
         self.field_tag_2.setPlaceholderText("Введіть тег...")
 
 
