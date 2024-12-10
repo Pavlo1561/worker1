@@ -64,7 +64,7 @@ class CurrencyConverter(QWidget):
             'EUR':0.85,
             'UAH':41.1,
             'GBP':0.75
-        }
+        }                   #Відношення до долара
 
         try:
             amount = float(self.amount_input.text())
