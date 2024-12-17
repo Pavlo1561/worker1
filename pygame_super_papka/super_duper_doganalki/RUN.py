@@ -16,7 +16,7 @@ x2 = 300
 y2 = 300
 
 sprite1 = transform.scale(image.load("./super_duper_doganalki/cat.png"), (70,70))
-sprite2 = transform.scale(image.load("./super_duper_doganalki/dog.png"), (71,40))
+sprite2 = transform.scale(image.load("./super_duper_doganalki/dog.png"), (71,70))
 speed = 10
 
 while run:
